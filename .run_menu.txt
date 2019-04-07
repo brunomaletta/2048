@@ -1,0 +1,5 @@
+Press an arow key to move
+
+[U] Undo last move
+
+[E] Exit

@@ -1,0 +1,12 @@
+The game consists on a board, of size K x K, and a numeric base N. By default, K = 2N.
+After every move you make, a new number will apear randomly on an empty position of the board. That number can either be N or N^2, N being N times more likely to occur.
+In the begining of the game, there is only one number on the board. For example, for N = 2 and K = 4:
+A move consists on pressing an arrow key on the keyboard. By doing so, all the numbers on the board will be pulled to the direction you chose.
+By pressing the left arrow key on our example:
+Note that the number 4 = N^2 appeared on a random position.
+Also, when you make a move, N equal numbers lined on the direction of the move will be joined together, so this way you can create bigger numbers. For example:
+By pressing left on this stage, you will get:
+Note that the number 2 = N on the 3rd line and 4th column appeared randomly.
+You lose when the board is completly filled and the there is no available move.
+The goal of the game is to obtain the highest score you can.
+The score is calculated by the sum of all the numbers on the board, divided by K^2.

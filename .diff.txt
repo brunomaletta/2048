@@ -1,0 +1,9 @@
+[M] Medium (base 2)
+
+[H] Hard   (base 3)
+
+[P] Pro    (base 5)
+
+[C] Custom base
+
+[B] Back

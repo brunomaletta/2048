@@ -1,0 +1,11 @@
+===== 2048 =====
+
+[N] New game
+
+[C] Continue ongoing game
+
+[S] Scoreboard
+
+[H] How to play
+
+[E] Exit
