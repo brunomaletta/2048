@@ -85,7 +85,7 @@ int move() {
 void run(int base, int size, int type, int c) { // c -> 0 if new game, 1 if continue game
 	Board board;
 	if (c == 0) {
-		FILE* cont = fopen(".cont.txt", "r");
+		FILE* cont = fopen("files/cont.txt", "r");
 		int c_base; fscanf(cont, "%d", &c_base);
 		if (c_base != 0) {
 			printf("\nOverwrite ongoing game? (y/n) ");
@@ -98,7 +98,7 @@ void run(int base, int size, int type, int c) { // c -> 0 if new game, 1 if cont
 		board = new_board(size, base, type);
 		generate_number(&board);
 	} else {
-		FILE* cont = fopen(".cont.txt", "r");
+		FILE* cont = fopen("files/cont.txt", "r");
 		int c_base; fscanf(cont, "%d", &c_base);
 		if (c_base == 0) {
 			clear_screen();
@@ -121,7 +121,7 @@ void run(int base, int size, int type, int c) { // c -> 0 if new game, 1 if cont
 			Board board2 = board, board3 = board;
 			if (slide(&board2, 1) == 0 && slide(&board3, 2) == 0) { // and no moves
 				update_scoreboard(board);
-				FILE* cont = fopen(".cont.txt", "w");
+				FILE* cont = fopen("files/cont.txt", "w");
 				fprintf(cont, "0\n");
 				fclose(cont);
 				clear_screen();
@@ -149,7 +149,7 @@ void run(int base, int size, int type, int c) { // c -> 0 if new game, 1 if cont
 		}
 	}
 	update_scoreboard(board);
-	FILE* cont = fopen(".cont.txt", "w");
+	FILE* cont = fopen("files/cont.txt", "w");
 	fprintf(cont, "%d\n\n", board.base);
 	fprintf(cont, "%d\n\n", board.size);
 	fprintf(cont, "%d\n\n", board.free);

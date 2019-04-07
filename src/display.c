@@ -9,13 +9,13 @@ void draw_file(char file[]) {
 	fclose(f);
 }
 
-void draw_how_to_play() { draw_file(".how_to_play.txt"); }
+void draw_how_to_play() { draw_file("files/how_to_play.txt"); }
 
-void draw_run_menu() { draw_file(".run_menu.txt"); }
+void draw_run_menu() { draw_file("files/run_menu.txt"); }
 
-void draw_menu() { draw_file(".menu.txt"); }
+void draw_menu() { draw_file("files/menu.txt"); }
 
-void draw_diff() { draw_file(".diff.txt"); }
+void draw_diff() { draw_file("files/diff.txt"); }
 
 void draw_number(int n, int base) {
 	int p = round(log(n) / log(base));
@@ -69,7 +69,7 @@ void how_to_play() {
 	board4.tiles[2][3] = 2; board4.tiles[3][0] = 2; board4.tiles[3][1] = 8;
 	board4.tiles[3][2] = 4;
 
-	FILE* h = fopen(".how_to_play.txt", "r");
+	FILE* h = fopen("files/how_to_play.txt", "r");
 	char l[200];
 	int i, j;
 	clear_screen();

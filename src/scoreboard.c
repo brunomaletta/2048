@@ -3,20 +3,20 @@
 void update_scoreboard(Board board) {
 	FILE* scoreboard;
 	switch (board.type) {
-		case 0: scoreboard = fopen(".score_m.txt", "r"); break;
-		case 1: scoreboard = fopen(".score_h.txt", "r"); break;
-		case 2: scoreboard = fopen(".score_p.txt", "r"); break;
-		case 3: scoreboard = fopen(".score_c.txt", "r"); break;
+		case 0: scoreboard = fopen("files/score_m.txt", "r"); break;
+		case 1: scoreboard = fopen("files/score_h.txt", "r"); break;
+		case 2: scoreboard = fopen("files/score_p.txt", "r"); break;
+		case 3: scoreboard = fopen("files/score_c.txt", "r"); break;
 	}
 	float score;
 	fscanf(scoreboard, "%f", &score);
 	fclose(scoreboard);
 	if (score >= board.score) return;
 	switch (board.type) {
-		case 0: scoreboard = fopen(".score_m.txt", "w"); break;
-		case 1: scoreboard = fopen(".score_h.txt", "w"); break;
-		case 2: scoreboard = fopen(".score_p.txt", "w"); break;
-		case 3: scoreboard = fopen(".score_c.txt", "w"); break;
+		case 0: scoreboard = fopen("files/score_m.txt", "w"); break;
+		case 1: scoreboard = fopen("files/score_h.txt", "w"); break;
+		case 2: scoreboard = fopen("files/score_p.txt", "w"); break;
+		case 3: scoreboard = fopen("files/score_c.txt", "w"); break;
 	}
 	fprintf(scoreboard, "%f\n\n", board.score);
 	fprintf(scoreboard, "%d\n\n", board.base);
@@ -36,10 +36,10 @@ void scoreboard() {
 		draw_diff();
 		FILE* scoreboard;
 		char c = getch();
-		if (c == 'm' || c == 'M') scoreboard = fopen(".score_m.txt", "r");
-		else if (c == 'h' || c == 'H') scoreboard = fopen(".score_h.txt", "r");
-		else if (c == 'p' || c == 'P') scoreboard = fopen(".score_p.txt", "r");
-		else if (c == 'c' || c == 'C') scoreboard = fopen(".score_c.txt", "r");
+		if (c == 'm' || c == 'M') scoreboard = fopen("files/score_m.txt", "r");
+		else if (c == 'h' || c == 'H') scoreboard = fopen("files/score_h.txt", "r");
+		else if (c == 'p' || c == 'P') scoreboard = fopen("files/score_p.txt", "r");
+		else if (c == 'c' || c == 'C') scoreboard = fopen("files/score_c.txt", "r");
 		else if (c == 'b' || c == 'B') break;
 		else c = '\0';
 		if (c != '\0') {
